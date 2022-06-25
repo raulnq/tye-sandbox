@@ -1,0 +1,32 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h1>Statistics</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Country</th>
+            <th>Population</th>
+            <th>Area</th>
+            <th>Density</th>
+        </tr>
+    </thead>
+    <tbody>
+    @if (Model.Statistics != null)
+    {
+        foreach (var task in Model.Statistics)
+        {
+            <tr>
+                <td>@task.Country </td>
+                <td>@task.Population</td>
+                <td>@task.Area</td>
+                <td>@task.Density</td>
+            </tr>
+        }
+    }
+    </tbody>
+</table>
